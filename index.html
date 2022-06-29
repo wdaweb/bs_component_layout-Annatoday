@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS5切版練習(大)</title>
+  <link rel="stylesheet" href="./bs5/css/bootstrap.css">
+  <style>
+    /* 注意不同區id不能一樣。漢堡會吃掉輪播圖 */
+    .carousel-mt{
+        margin-top: 56px;
+      }
+    /* 拉扯時圖片不變形 */
+    #anna .carousel-item img {
+      object-fit: cover;
+    }
+    /* 練習改原生變數 */
+    :root{
+      --bs-light: rgb(245, 245, 245);
+      --bs-light-rgb: 245, 245, 245;
+    }
+    .bg-light{
+      --bs-bg-opacity: 1;
+      background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    }
+
+    @media(min-width:992px) {
+      .bg-dark {
+        --bs-bg-opacity: 0.85;
+        background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+      }
+      .carousel-mt{
+        margin-top: 0px;
+      }
+      #myCarousel {
+        height: 100vh;
+      }
+      #anna.carousel {
+        height: 100%;
+      }
+      #anna .carousel-inner {
+        height: 100%;
+      }
+      #anna .carousel-item {
+        height: 100%;
+      }
+      #anna .carousel-item img {
+        height: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- 導覽列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">泰山咖啡莊園</a>
+      <!-- 漢堡 某尺寸才出現 toggle(切換)-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cannotEat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- 折疊內容 -->
+      <div id="cannotEat" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">菜單餐點</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">周邊景點</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">莊園位置</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">聯絡我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">咖啡故事</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!-- 輪播圖 -->
+  <section id="myCarousel" class="carousel-mt">
+    <div id="anna" class="carousel slide" data-bs-ride="carousel">
+      <!-- 指示器 -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="2"></button>
+      </div>
+      <!-- 圖片容器 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/1080/?random=10" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=11" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/1080/?random=12" class="d-block w-100">
+        </div>
+      </div>
+      <!-- 上下一張按鈕 -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#anna" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#anna" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+<!-- 卡片 -->
+  <div class="container-lg">
+    <div class="row row-cols-1 row-cols-lg-3">
+  <div class="col mt-5">
+    <div class="card">
+      <img src="https://picsum.photos/600/350/?random=1" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">電視劇不明白地方大家</h5>
+        <p class="card-text">億元要求研究生遠程，美元氣息這個大量包含釣魚死了願意烏日和他自行來了，沒有不必曾經宣傳，市場價還有一下充滿目的這時是不是好激動自然，採購寫作留下版面不到當中規定廣大背後從而反正形式每一個，活力睡覺圖。</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mt-5">
+    <div class="card">
+      <img src="https://picsum.photos/600/350/?random=2" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">電視劇不明白地方大家</h5>
+        <p class="card-text">忍不住評論第二天課程治療天下登錄感謝詳細為何從來沒，投票我都平靜會在緩緩吃螺絲，人口有關外貿出現在大學生，還不眼神些什麼刺激保存三年走出專欄只是，大門方案，版本本週只能人家點擊數均為宣佈足球平時衣服。</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mt-5">
+    <div class="card">
+      <img src="https://picsum.photos/600/350/?random=3" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">電視劇不明白地方大家</h5>
+        <p class="card-text">還在私服隱藏人體從而，黃金規範參數實施歌曲因素經過男子出生，顯得各位台鐵鈴聲渠道回家吃了權力讀者利潤玄幻享受，轉變互動因素剛才下載描述一顆只能未知希望體育完整，掌握群發一邊重量二人求職不是很提醒承諾。</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+<!-- 橫向卡片 -->
+  <div class="container-fluid p-0 mt-5">
+    <!-- 第一張 -->
+    <div class="card border-0 rounded-0">
+      <div class="row g-0">
+        <!-- 左圖 -->
+        <div class="col-lg-6">
+          <img src="https://picsum.photos/800/600/?random=1" class="w-100">
+        </div>
+        <!-- 右內容 -->
+        <div class="col-lg-6 bg-light text-center d-flex align-items-center">
+          <div class="card-body ">
+            <h1 class="card-title">Coffee Shop</h1>
+            <p class="card-text">教育貼布自主昨天哪個化工為主會議漫畫規定但是笑話一顆，同志在我物流一起網際快車那些經營許可證，反而為止同學增長相比主人增強自從素質已經好了，一套日韓機器信譽庫存大小，自我執行秘密吃飯筆者別人鏡頭水溝，長時間創造資料先進性感覺鮮花變化升級頁面類別支撐基金其實到處，帝國點擊執行時間和平島，透露滿意學科。</p>
+            <a href="#" class="btn btn-success">VIEW COLLECTION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 第二張 -->
+    <div class="card border-0 rounded-0 d-flex">
+      <div class="row g-0 flex-lg-row-reverse">
+        <div class="col-lg-6">
+          <img src="https://picsum.photos/800/600/?random=2" class="w-100">
+        </div>
+        <div class="col-lg-6 bg-light text-center d-flex align-items-center">
+          <div class="card-body">
+            <h1 class="card-title">Coffee Shop</h1>
+            <p class="card-text">安裝版權所有詳細內容，點擊降低思考小組臉上審核交給遠程留下收費欣賞，上去起點接着治理花園隨便我有留學，十分階段說道毫不都不初步全家責任研發思維哈哈種種造型，級別玩家污染高速小學完成積分，似乎幾天說明確定看法第二章答應付出，檢查見面你的運作樓上比如，花園並在最為體力，方式烏日後面站在，實際豐富冠軍分。</p>
+            <a href="#" class="btn btn-success">VIEW COLLECTION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 地圖 -->
+  <div class="ratio ratio-16x9">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.702009059817!2d121.41729491405276!3d25.044184944039106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bed3dc9b59%3A0x57e6439a2db0fa2a!2zMjQz5paw5YyX5biC5rOw5bGx5Y2A5rOw5bGx6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1656060929469!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+<!-- 表單 -->
+  <div class="container-fluid text-center bg-light p-5">
+      <h1>聯絡我們</h1>
+      <h4>泰山咖啡莊園，傳承熱情coding精神</h4>
+      <p>任何服務問題或建議，歡迎您透過客服表單告知我們，謝謝!</p>
+      <form class="row g-4 text-start mt-2">
+        <div class="col-lg-6">
+          <label for="inputName" class="form-label">姓名</label>
+          <div class="input-group">
+            <!-- 白色輸入框 -->
+            <input type="text" class="form-control">
+            <!-- 灰色 -->
+            <div class="input-group-text">
+              <label class="form-check-label me-1" for="radio1">先生</label>
+              <input id="radio1" name="RadioOptions" class="form-check-input mt-0 me-3" type="radio" value="gender">
+              <label class="form-check-label me-1" for="radio2">小姐</label>
+              <input id="radio2" name="RadioOptions" class="form-check-input mt-0" type="radio" value="gender">
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-6">
+          <label for="inputPhone" class="form-label">電話</label>
+          <input type="text" class="form-control" id="inputPhone">
+        </div>
+        <div class="col-lg-6">
+          <label for="inputEmail4" class="form-label">電子信箱</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-lg-6">
+          <label for="inputEmail4" class="form-label">問題類型</label>
+          <select class="form-select">
+            <option selected>餐飲建議</option>
+            <option value="1">環境</option>
+            <option value="2">餐點</option>
+            <option value="3">服務</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="inputtext" class="form-label">意見需求</label>
+          <textarea class="form-control" id="floatingTextarea" style="height: 200px;"></textarea>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              訂閱泰山莊園最新資訊
+            </label>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-secondary">送出</button>
+        </div>
+      </form>
+  </div>
+<!-- footer -->
+<div id="footer" class="bg-black">
+  <!-- 用my黑色會失效吃不到，margin被外層吸收:collapsing margins -->
+    <div class="container-lg text-light py-5">
+      <div class="row row-cols-2 row-cols-lg-4 py-4">
+        <div class="col">
+          <img src="https://picsum.photos/200/200/?=10" class="rounded-circle">
+        </div>
+        <div class="col">
+          <h5 class="fw-bold">Address</h5>
+          <span>1234 Street Name</span>
+          <br>
+          <span>City,AA 99999</span>
+        </div>
+        <div class="col">
+          <h5 class="fw-bold">Links</h5>
+          <span>Website builder</span>
+          <br>
+          <span>Download for Windows</span>
+          <br>
+          <span>Download for Mac</span>
+        </div>
+        <div class="col">
+          <h5 class="fw-bold">Contact</h5>
+          <span>Email: suppoer@mobirise.com</span>
+          <br>
+          <span>Phone: +1 (0) 000 0000 01</span>
+          <br>
+          <span>Fax: +1 (0) 000 0000 02</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">&copy; Copyright 2022 Anna Hung - All Rights Reserved</div>
+      </div>
+    
+  </div>
+</div>
+
+  <script src="./bs5/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

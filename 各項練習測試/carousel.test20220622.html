@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bs5/css/bootstrap.css">
+  <style>
+    /* 修改輪播速率 */
+    /* https://easings.net/ */
+    .carousel-item {
+      transition: 2s all cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+    /* 修改上一張、下一張的背景漸層氛圍 */
+    #anna .carousel-control-prev {
+      opacity: .75;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .75), transparent);
+    }
+    #anna .carousel-control-next {
+      opacity: .75;
+      background: linear-gradient(270deg, rgba(0, 0, 0, .75), transparent);
+    }
+    /* 修改指示器的形狀、數字 */
+    .carousel-indicators [data-bs-target] {
+      width: 50px;
+      height: 50px;
+      text-indent: 0;
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
+    .carousel-indicators {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- [05:10:30 start] -->
+  <!-- 增加圖片: 有幾個指示器就有幾張圖(carousel-item) -->
+  <!-- active要對應到(預設先顯示) -->
+
+  <!-- 該輪播圖的 id 為 anna -->
+  <!-- data-bs-interval="7000" 為每張圖片延遲(間隔)的時間 -->
+  <!-- data-bs-touch="true" 設定行動裝置可以觸控滑動 -->
+  <!-- .carousel-fade(褪色) 可以將滑動變成淡入、淡出 -->
+  <!-- .carousel-dark 深色模式，文字會變成黑色 -->
+  <div class="container">
+    <div id="anna" class="carousel slide " data-bs-ride="carousel" data-bs-interval="7000" data-bs-touch="false">
+      <!-- 下方指示器(小長條形)，顯示幾張以及可以點選 跳至播放該圖片 -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="0" class="active">1</button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="1">2</button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="2">3</button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="3">4</button>
+        <button type="button" data-bs-target="#anna" data-bs-slide-to="4">5</button>
+      </div>
+      <!-- .carousel-inner 放圖片的容器 -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/1920/600/?=10" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?=11" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?=12" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?=13" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Fourth slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/1920/600/?=14" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Fifth slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <!-- 上一張按鈕，data-bs-target 的 #id 需跟輪播圖 id 一致，範例是 kaifu -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#anna" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <!-- 下一張按鈕 -->
+      <button class="carousel-control-next" type="button" data-bs-target="#anna" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="./bs5/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
